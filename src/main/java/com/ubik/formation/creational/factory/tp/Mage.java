@@ -4,6 +4,7 @@ import java.util.HashSet;
 
 public class Mage extends Character {
     public Mage() {
+        this.name = "Random";
         this.attack = 70;
         this.health = 40;
         this.skills = new HashSet<>();

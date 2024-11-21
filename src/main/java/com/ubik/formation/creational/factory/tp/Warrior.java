@@ -4,6 +4,7 @@ import java.util.HashSet;
 
 public class Warrior extends Character {
     public Warrior() {
+        this.name = "toplaner";
         this.attack = 40;
         this.health = 80;
         this.skills = new HashSet<>();
