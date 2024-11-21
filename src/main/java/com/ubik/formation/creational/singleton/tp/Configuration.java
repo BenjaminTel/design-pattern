@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class Configuration {
 
-    private final Map<String, String> settings;
+    private Map<String, String> settings;
 
-    private static final Configuration instance = new Configuration();
+    private static Configuration instance;
 
     private Configuration() {
         settings = new HashMap<>();
@@ -20,7 +20,10 @@ public class Configuration {
         settings.put("INVOICE_API_KEY", "987654321azerty");
     }
 
-    public static Configuration getInstance() {
+    public static synchronized Configuration getInstance() {
+        if (instance == null) {
+            instance = new Configuration();
+        }
         return instance;
     }
 
